@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Pattern</title>
+</head>
+<body>
+  <h2>⭐ Star Pattern Printer</h2>
+  <label for="rows">Enter number of rows: </label>
+  <input type="number" id="rows">
+  <button id="printBtn">Print Pattern</button>
+  <select id="type">
+    <option value="square">square</option>
+    <option value="circle">circle</option>
+    <option value="triangle">triangle</option>
+    <option value="daimond">daimond</option>
+    <option value="stars">star</option>
+  </select>
+
+  <pre id="pattern"></pre>
+
+  </body>
+  <script>
+const button = document.getElementById("printBtn");
+
+button.addEventListener("click", () => {
+    const rows = Number(document.getElementById("rows").value);
+    const type = document.getElementById("type").value; // Read value on click
+    let result = "";
+
+    if(type === "star"){
+        for (let i = 1; i <= rows; i++) {
+            result += "⭐".repeat(i) + "\n";
+        }
+    }
+    else if (type === "triangle") {
+        for (let i = 1; i <= rows; i++) {
+            result += "🔼".repeat(i) + "\n";
+        }
+    }
+    else if (type === "square") {
+        for (let i = 1; i <= rows; i++) {
+            result += "🟦".repeat(rows) + "\n";
+        }
+    }
+    else if (type === "diamond") {
+        for (let i = 1; i <= rows; i++) {
+            result += " ".repeat(rows-i) + "💎 ".repeat(i) + "\n";
+        }
+        for (let i = rows-1; i >=1; i--) {
+            result += " ".repeat(rows-i) + "💎 ".repeat(i) + "\n";
+        }
+    }
+    else if (type === "circle") {
+        const radius = rows;
+        for (let y = -radius; y <= radius; y++) {
+            let line = "";
+            for (let x = -radius; x <= radius; x++) {
+                if (x*x + y*y <= radius*radius) {
+                    line += "⭕";
+                } else {
+                    line += " ";
+                }
+            }
+            result += line + "\n";
+        }
+    }
+    else{
+        alert("error");
+    }
+
+    document.getElementById("pattern").textContent = result;
+});
+  </script>
+  </html>
