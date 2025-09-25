@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Background Color Changer</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: white;
+      transition: background-color 0.5s ease;
+      font-family: Arial, sans-serif;
+    }
+
+    .btn {
+      margin: 5px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      color: white;
+    }
+
+    .red { background-color: crimson; }
+    .blue { background-color: royalblue; }
+    .green { background-color: seagreen; }
+    .purple { background-color: rebeccapurple; }
+    .orange { background-color: darkorange; }
+  </style>
+</head>
+<body>
+  <h1>Pick a Background Color</h1>
+  <button class=" red" id="red">Red</button>
+  <button class=" blue" id="blue">Blue</button>
+  <button class=" green" id="green">Green</button>
+  <button class=" purple" id="purple">Purple</button>
+  <button class=" orange" id="orange" >Orange</button>
+
+  <script src ="bg.js">
+   
+  </script>
+</body>
+</html>
